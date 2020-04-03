@@ -1,0 +1,61 @@
+apiVersion: appsody.dev/v1beta1
+kind: AppsodyApplication
+metadata:
+  annotations:
+    commit.image.appsody.dev/author: Denilson Nastacio <dnastaci@us.ibm.com>
+    commit.image.appsody.dev/committer: Denilson Nastacio <dnastaci@us.ibm.com>
+    commit.image.appsody.dev/date: Tue Mar 31 10:26:11 2020 -0400
+    commit.image.appsody.dev/message: Update stack
+    commit.stack.appsody.dev/author: Denilson Nastacio <dnastaci@us.ibm.com>
+    commit.stack.appsody.dev/committer: Denilson Nastacio <dnastaci@us.ibm.com>
+    commit.stack.appsody.dev/contextDir: /lab-jaeger-istio-sbol/stacks/my-java-spring-boot2-liberty
+    commit.stack.appsody.dev/date: Mon Mar 30 20:00:08 2020 -0400
+    commit.stack.appsody.dev/message: Initial working version with Docker
+    image.opencontainers.org/created: "2020-04-02T19:33:16-04:00"
+    image.opencontainers.org/documentation: https://github.com/My-Appsody-Org/service-b
+    image.opencontainers.org/revision: 08a65687be8669a72d262ad50db3ac397705cca4-modified
+    image.opencontainers.org/source: https://github.com/My-Appsody-Org/service-b/tree/master
+    image.opencontainers.org/url: https://github.com/My-Appsody-Org/service-b
+    stack.appsody.dev/authors: Ozzy <ozzy@ca.ibm.com>
+    stack.appsody.dev/configured: docker.io/dnastacio/my-java-spring-boot2-liberty:0.1
+    stack.appsody.dev/created: "2020-03-31T10:06:02-04:00"
+    stack.appsody.dev/description: Spring Boot on Open Liberty & OpenJ9 using Maven
+    stack.appsody.dev/documentation: https://github.com/nastacio/java-spring-boot2-liberty/tree/master/lab-jaeger-istio-sbol/stacks/my-java-spring-boot2-liberty/README.md
+    stack.appsody.dev/licenses: Apache-2.0
+    stack.appsody.dev/revision: a474578640a3fa137858678396a0071e81eb5128-modified
+    stack.appsody.dev/source: https://github.com/nastacio/java-spring-boot2-liberty/tree/master/lab-jaeger-istio-sbol/stacks/my-java-spring-boot2-liberty/image
+    stack.appsody.dev/tag: docker.io/dnastacio/my-java-spring-boot2-liberty:0.1.11
+    stack.appsody.dev/title: Spring Boot® on Open Liberty
+    stack.appsody.dev/url: https://github.com/nastacio/java-spring-boot2-liberty/tree/master/lab-jaeger-istio-sbol/stacks/my-java-spring-boot2-liberty
+  creationTimestamp: null
+  labels:
+    image.opencontainers.org/title: service-b
+    stack.appsody.dev/id: my-java-spring-boot2-liberty
+    stack.appsody.dev/version: 0.1.11
+  name: service-b
+spec:
+  applicationImage: dev.local/service-b
+  createKnativeService: false
+  expose: true
+  livenessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /actuator/liveness
+      port: 9080
+    initialDelaySeconds: 5
+    periodSeconds: 2
+  readinessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /actuator/health
+      port: 9080
+    initialDelaySeconds: 5
+    periodSeconds: 2
+  service:
+    annotations:
+      prometheus.io/path: /actuator/prometheus
+      prometheus.io/scrape: "true"
+    port: 9080
+    type: NodePort
+  stack: my-java-spring-boot2-liberty
+  version: 1.0.0
