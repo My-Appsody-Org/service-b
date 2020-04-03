@@ -1,5 +1,6 @@
 apiVersion: appsody.dev/v1beta1
 kind: AppsodyApplication
+namespace: demo
 metadata:
   annotations:
     commit.image.appsody.dev/author: Denilson Nastacio <dnastaci@us.ibm.com>
@@ -39,7 +40,6 @@ metadata:
 spec:
   applicationImage: dev.local/service-b
   createKnativeService: false
-  namespace: demo
   envFrom:
   - configMapRef:
       name: jaeger-config
