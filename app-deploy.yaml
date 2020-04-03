@@ -27,11 +27,14 @@ metadata:
     stack.appsody.dev/tag: docker.io/dnastacio/my-java-spring-boot2-liberty:0.1.11
     stack.appsody.dev/title: Spring Boot® on Open Liberty
     stack.appsody.dev/url: https://github.com/nastacio/java-spring-boot2-liberty/tree/master/lab-jaeger-istio-sbol/stacks/my-java-spring-boot2-liberty
+    sidecar.istio.io/inject: "true"
   creationTimestamp: null
   labels:
     image.opencontainers.org/title: service-b
     stack.appsody.dev/id: my-java-spring-boot2-liberty
     stack.appsody.dev/version: 0.1.11
+     app: service-b
+     version: v1
   name: service-b
 spec:
   applicationImage: dev.local/service-b
