@@ -33,8 +33,8 @@ metadata:
     image.opencontainers.org/title: service-b
     stack.appsody.dev/id: my-java-spring-boot2-liberty
     stack.appsody.dev/version: 0.1.11
-     app: service-b
-     version: v1
+      app: service-b
+      version: v1
   name: service-b
 spec:
   applicationImage: dev.local/service-b
