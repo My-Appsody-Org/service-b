@@ -34,8 +34,8 @@ metadata:
     stack.appsody.dev/id: my-java-spring-boot2-liberty
     stack.appsody.dev/version: 0.1.11
     app: service-b
-    version: v1
-  name: service-b-v1
+    version: v2
+  name: service-b-v2
   namespace: demo
 spec:
   applicationImage: dev.local/service-b
@@ -67,4 +67,4 @@ spec:
     type: ClusterIP
   stack: my-java-spring-boot2-liberty
   pullPolicy: Always
-  version: 1.0.2
+  version: 2.0.1
