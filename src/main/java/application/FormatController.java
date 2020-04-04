@@ -20,8 +20,8 @@ public class FormatController {
     public String formatGreeting(@RequestParam String name, @RequestHeader HttpHeaders headers) {
         System.out.println("Headers: " + headers);
         Span span = tracer.scopeManager().activeSpan();
-        span.log("formatting message remotely for name " + name);
-        String response = "Hello, from service-b " + name + "!";
+        span.log("formatting message remotely for name (v2): " + name);
+        String response = "Hello, from service-b (v2)" + name + "!";
         String myBaggage = span.getBaggageItem("my-baggage");
         span.log("this is baggage " + myBaggage);
         return response;
