@@ -63,6 +63,8 @@ spec:
       prometheus.io/path: /actuator/prometheus
       prometheus.io/scrape: "true"
     port: 9080
-    type: NodePort
+    portName: http
+    type: ClusterIP
   stack: my-java-spring-boot2-liberty
-  version: 1.0.0
+  pullPolicy: Always
+  version: 1.0.1
