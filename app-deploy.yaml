@@ -53,6 +53,7 @@ spec:
     periodSeconds: 2
   readinessProbe:
     failureThreshold: 12
+    timeoutSeconds: 120
     httpGet:
       path: /actuator/health
       port: 9080
