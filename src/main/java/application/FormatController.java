@@ -21,7 +21,7 @@ public class FormatController {
         System.out.println("Headers: " + headers);
         Span span = tracer.scopeManager().activeSpan();
         span.log("formatting message remotely for name " + name);
-        String response = "Hello, from service-b " + name + "!";
+        String response = "Hello, from service-b-v3 " + name + "!";
         String myBaggage = span.getBaggageItem("my-baggage");
         span.log("this is baggage " + myBaggage);
         return response;
