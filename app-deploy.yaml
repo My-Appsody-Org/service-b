@@ -36,7 +36,7 @@ metadata:
     app: service-b
     version: v3
   name: service-b-v3
-  namespace: demo
+  namespace: knative-serving
 spec:
   applicationImage: dev.local/service-b
   createKnativeService: true
