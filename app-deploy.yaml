@@ -36,7 +36,7 @@ metadata:
     app: service-b
     version: v3
   name: service-b-v3
-  namespace: knative-serving
+  namespace: demo
 spec:
   applicationImage: dev.local/service-b
   createKnativeService: true
@@ -68,4 +68,4 @@ spec:
     type: ClusterIP
   stack: my-java-spring-boot2-liberty
   pullPolicy: Always
-  version: 3.0.1
+  version: 3.0.2
